@@ -10,7 +10,7 @@ const app = express();
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use((req, res, next) => {
-    const allowedOrigins = ['https://example-express-qwni.onrender.com', 'https://www.freecodecamp.com'];
+    const allowedOrigins = ['https://narrow-plane.gomix.me', 'https://www.freecodecamp.com'];
     const origin = req.headers.origin || '*';
     if(!process.env.XORIG_RESTRICT || allowedOrigins.indexOf(origin) > -1){
          console.log(origin);
@@ -21,7 +21,7 @@ if (!process.env.DISABLE_XORIGIN) {
   });
 }
 
-const port = process.env.PORT || 3010;
+const port = process.env.PORT || 3000;
 bGround.setupBackgroundApp(app, myApp, __dirname).listen(port, () => {
   bGround.log(`Node is listening on port ${port}...`);
 });
